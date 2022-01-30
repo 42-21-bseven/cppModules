@@ -40,7 +40,6 @@ Fixed::Fixed(int intNum)
     std::cout << "Int constructor called" << std::endl;
 }
 
-
 int Fixed::toInt() const
 {
     return (this->fixedPointValue / (1 << this->fractionalBits));
