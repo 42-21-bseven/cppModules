@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Phonebook.hpp"
+#include <string>
 
 int 	isNum(std::string str) {
 	int i;
@@ -35,7 +36,7 @@ int main() {
 			std::cin >> currentCommand;
 			if (isNum(currentCommand))
 			{
-				int index = std::stoi(currentCommand);
+				int index = atoi(currentCommand.c_str());
 				if (index && phonebook.getContactsCount() && index <= phonebook.getContactsCount() && index <= 8){
 					phonebook.outContactInfo(index - 1);
 				}
@@ -46,6 +47,9 @@ int main() {
 			else{
 				std::cout << "Invalid index\n";
 			}
+		}
+		else if (currentCommand != "EXIT"){
+			std::cout << "Incorrect command\n";
 		}
 	}
 }

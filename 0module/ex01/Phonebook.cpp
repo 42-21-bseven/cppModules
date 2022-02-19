@@ -24,7 +24,15 @@ int 	Phonebook::isNum(std::string str) {
 std::string scanContactField(std::string fieldName){
 	std::string inputString;
 	std::cout << "Enter " << fieldName << "\n";
-	std::cin >> inputString;
+	while(getline(std::cin, inputString) && inputString[0] == '\0'){
+		std::cout << "No data\n";
+		std::cout << "Enter " << fieldName << "\n";
+	}
+	while(fieldName == "Phone Number" && !ft_isNumber(inputString)){
+		std::cout << "Incorrect Phone Number\n";
+		std::cout << "Enter " << fieldName << "\n";
+		std::cin >> inputString;
+	}
 	return inputString;
 }
 
@@ -33,6 +41,7 @@ int Phonebook::getContactsCount(){
 }
 
 void	Phonebook::addContact() {
+	std::cin.get();
 	this->contacts[this->contactsCount % 8].setFirstName(scanContactField("First Name"));
 	this->contacts[this->contactsCount % 8].setLastName(scanContactField("Last Name"));
 	this->contacts[this->contactsCount % 8].setDarkestSecret(scanContactField("Darkest Secret"));

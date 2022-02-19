@@ -3,6 +3,9 @@
 
 # include <string>
 # include <iostream>
+
+int ft_isNumber(std::string phoneNumber);
+
 class Contact {
 
 private:

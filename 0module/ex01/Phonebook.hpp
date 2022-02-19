@@ -12,12 +12,12 @@ private:
 	int		contactsCount;
 public:
 	Phonebook();
-	int 	getContactsCount();
+	int getContactsCount();
 	int		isNum(std::string str);
 	void	addContact();
 	void	printContact(int num);
 	void	search();
-	void 	outContactInfo(int contactIndex);
+	void outContactInfo(int contactIndex);
 	std::string formOut(std::string);
 };
 
