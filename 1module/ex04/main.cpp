@@ -8,7 +8,8 @@ int main(int argc, char *argv[])
     if (argc != 4)
     {
         std::cerr << "Invalid arguments\n";
-        exit(1);
+        // exit(1);
+        return 1;
     }
 
     std::string fileName = argv[1];
@@ -16,7 +17,8 @@ int main(int argc, char *argv[])
     if (!fileStream.is_open())
     {
         std::cerr << "File not opening" << std::endl;
-        exit(1);
+        // exit(1);
+        return 1;
     }
     
     std::string replaceFrom = argv[2];
@@ -42,10 +44,12 @@ int main(int argc, char *argv[])
     if (!replacedFileStream.is_open())
     {
         std::cerr << "Can't open created file" << std::endl;
-        exit(1);
+        // exit(1);
+        return 1;
     }
 
     replacedFileStream << fileContent;
     fileStream.close();
     replacedFileStream.close();
+    return 0;
 }

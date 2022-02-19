@@ -9,7 +9,7 @@ $(NAME): $(O_FILE)
 		c++ $(O_FILE) -o $(NAME)
 
 %.o: %.cpp Contact.hpp Phonebook.hpp
-		@c++ -c -Wall -Wextra -Werror $< -o $@
+		@c++ -c -Wall -Wextra -Werror -std=c++98 $< -o $@
 
 clean:
 		@rm -f $(O_FILE)
