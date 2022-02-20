@@ -9,7 +9,7 @@ $(NAME): $(O_FILE)
 		c++ $(O_FILE) -o $(NAME)
 
 %.o: %.cpp
-		@c++ -c -Wall -Wextra -Werror $< -o $@
+		@c++ -std=c++98 -c -Wall -Wextra -Werror $< -o $@
 
 clean:
 		@rm -f $(O_FILE)
