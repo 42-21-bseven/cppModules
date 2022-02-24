@@ -9,6 +9,11 @@ private:
 	static const int bits = 8;
 public:
 
+	Fixed();
+	Fixed(const int);
+	Fixed(const float);
+	Fixed(const Fixed& copy);
+
 	static	Fixed &min(Fixed &first, Fixed &other);
 	static	Fixed &max(Fixed &first, Fixed &other);
 	static	const Fixed &min(const Fixed &first, const Fixed &other);
@@ -28,11 +33,6 @@ public:
 	Fixed	operator-(const Fixed& other);
 	Fixed	operator*(const Fixed& other);
 	Fixed	operator/(const Fixed& other);
-
-	Fixed();
-	Fixed(const int);
-	Fixed(const float);
-	Fixed(const Fixed& copy);
 
 	float	toFloat(void) const;
 	int		toInt(void) const;
