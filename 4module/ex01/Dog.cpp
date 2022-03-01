@@ -18,11 +18,12 @@ Dog	&Dog::operator=(const Dog& other) {
 }
 
 Dog::Dog(const Dog& copy) {
-	if (this != &copy) {
-		this->type = copy.type;
-		if (copy._brain)
-			this->_brain = new Brain(*copy._brain);
-	}
+//	if (this != &copy) {
+//		this->type = copy.type;
+//		if (copy._brain)
+//			this->_brain = new Brain(*copy._brain);
+//	}
+	*this = copy;
 }
 
 void    Dog::makeSound() const {

@@ -6,27 +6,22 @@ Cat::Cat() : Animal() {
 	this->_brain = new Brain();
 }
 
-Cat	&Cat::operator=(const Cat& other) {
+Cat::Cat(const Cat& copy)
+{
+	this->_brain = new Brain(*copy._brain);
+	this->type = copy.type;
+}
+
+
+Cat	&Cat::operator= (const Cat& other) {
 	if (this != &other) {
-		this->type.erase();
-		this->type.append(other.type);
-		if (this->_brain)
-			delete this->_brain;
-		if (other._brain)
-			this->_brain = new Brain(*other._brain);
+		delete this->_brain;
+		this->type = other.type;
+		this->_brain = other._brain;
+		this->_brain = new Brain(*other._brain);
 	}
 	return (*this);
 }
-
-Cat::Cat(const Cat& copy) {
-	if (this != &copy) {
-		this->type.erase();
-		this->type.append(copy.type);
-		if (copy._brain)
-			this->_brain = new Brain(*copy._brain);
-	}
-}
-
 void    Cat::makeSound() const {
     std::cout << "I am KITTY-KITTY-CAT!!! Meeeeeeeooooooooowwwwww!!!" << std::endl;
 }

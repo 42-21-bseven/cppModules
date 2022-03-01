@@ -5,18 +5,20 @@ int main() {
 	ClapTrap kolya("kolya");
 	
 	{
-		ClapTrap vasya("vasya");
+		ClapTrap unnamed("vasya");
 	}
 
-	ClapTrap unnamed;
+	ClapTrap anon;
 
-	kolya.attack("vasya");
+	kolya.attack("AnonYMOUS");
 	kolya.takeDamage(4);
-	unnamed.takeDamage(4);
+	anon.takeDamage(4);
 
 	ScavTrap a("asda");
 	ScavTrap b("a");
+	ScavTrap c(a);
+	ScavTrap d = c;
 
-	a = b;
-	a.attack("asdas");
+	// a = b;
+	// a.attack("asdas");
 }

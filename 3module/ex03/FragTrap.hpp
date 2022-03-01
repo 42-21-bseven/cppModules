@@ -5,16 +5,16 @@
 
 class ClapTrap;
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
-    protected:
+    private:
         void basicIntialize();
     public:
     FragTrap();
     FragTrap(std::string name);
+    ~FragTrap();
     FragTrap(const FragTrap&);
 	FragTrap	&operator=(const FragTrap& other);
-    ~FragTrap();
 
     void highFivesGuys();
 };

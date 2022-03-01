@@ -3,16 +3,50 @@
 #include "Cat.hpp"
 
 int main() {
-	const Animal** anima = new const Animal*[10]();
-	for (int i = 0; i < 10; i++) {
-		if (i % 2 == 0)
-			anima[i] = new Cat();
-		else 
-			anima[i] = new Dog();
-	}
-	for (int i = 0; i < 10; i++) {
-		delete anima[i];
-	}
+//	const Animal** anima = new const Animal*[10]();
+//	for (int i = 0; i < 10; i++) {
+//		if (i % 2 == 0)
+//			anima[i] = new Cat();
+//		else
+//			anima[i] = new Dog();
+//	}
+//	for (int i = 0; i < 10; i++) {
+//		delete anima[i];
+//	}
+
+//	Cat koshak;
+//	koshak.setType("huesos");
+//	Animal *vasek = new Cat();
+//	Animal supevasya = Cat();
+//
+////	Cat vasek;
+//	vasek->setType("vasek");
+////	Animal *NEvasek = new Cat(vasek);
+//	Animal NEvasek(*vasek);
+////	Cat NEvasek(vasek);
+
+//	std::cout << "7\n";
+//
+//	Cat kek;
+//	kek = koshak;
+
+	std::cout << "________________\n";
+	Cat koshak;
+	Cat vasek(koshak);
+	Cat lol = koshak;
+
+//	lol.getType();
+
+	std::cout << "________________\n";
+
+	Cat lll;
+
+
+//	std::cout << vasek->getType() << "\n";
+//	std::cout << NEvasek.getType() << "\n";
+
+
+
 
 	// Dog basic;
 	// Dog tmp = basic;
