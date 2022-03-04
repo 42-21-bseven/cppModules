@@ -6,12 +6,10 @@ Cat::Cat() : Animal() {
 	this->_brain = new Brain();
 }
 
-Cat::Cat(const Cat& copy)
-{
+Cat::Cat(const Cat& copy){
 	this->_brain = new Brain(*copy._brain);
 	this->type = copy.type;
 }
-
 
 Cat	&Cat::operator= (const Cat& other) {
 	if (this != &other) {
@@ -22,6 +20,7 @@ Cat	&Cat::operator= (const Cat& other) {
 	}
 	return (*this);
 }
+
 void    Cat::makeSound() const {
     std::cout << "I am KITTY-KITTY-CAT!!! Meeeeeeeooooooooowwwwww!!!" << std::endl;
 }

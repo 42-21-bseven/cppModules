@@ -6,12 +6,6 @@ Cat::Cat() : Animal() {
 	this->_brain = new Brain();
 }
 
-Cat::Cat(std::string test) : Animal() {
-	std::cout << "Cat-test constructor called" << std::endl;
-	this->type = "Cat";
-	this->_brain = new Brain(test);
-}
-
 Cat	&Cat::operator=(const Cat& other) {
 	if (this != &other) {
 		this->type.erase();

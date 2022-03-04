@@ -6,12 +6,6 @@ Dog::Dog() : Animal() {
 	this->_brain = new Brain();
 }
 
-Dog::Dog(std::string test) : Animal() {
-	std::cout << "Dog-test constructor called" << std::endl;
-	this->type = "Dog";
-	this->_brain = new Brain(test);
-}
-
 Dog	&Dog::operator=(const Dog& other) {
 	if (this != &other) {
 		this->type.erase();

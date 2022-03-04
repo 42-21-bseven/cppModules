@@ -25,7 +25,7 @@ Fixed::~Fixed()
 
 Fixed::Fixed(int intNum)
 {
-    this->fixedPointValue = intNum * (1 << this->fractionalBits);
+    this->fixedPointValue = intNum * (1  <<this->fractionalBits);
     std::cout << "Int constructor called" << std::endl;
 }
 

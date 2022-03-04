@@ -6,24 +6,19 @@ Dog::Dog() : Animal() {
 	this->_brain = new Brain();
 }
 
-Dog	&Dog::operator=(const Dog& other) {
-	if (this != &other) {
-		this->type = other.type;
-		if (this->_brain)
-			delete this->_brain;
-		if (other._brain)
-			this->_brain = new Brain(*other._brain);
-	}
-	return (*this);
+Dog::Dog(const Dog& copy) {
+		this->_brain = new Brain(*copy._brain);
+		this->type = copy.type;
 }
 
-Dog::Dog(const Dog& copy) {
-//	if (this != &copy) {
-//		this->type = copy.type;
-//		if (copy._brain)
-//			this->_brain = new Brain(*copy._brain);
-//	}
-	*this = copy;
+Dog	&Dog::operator=(const Dog& other) {
+	if (this != &other) {
+		delete this->_brain;
+		this->type = other.type;
+		this->_brain = other._brain;
+		this->_brain = new Brain(*other._brain);
+	}
+	return (*this);
 }
 
 void    Dog::makeSound() const {
